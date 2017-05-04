@@ -1,0 +1,688 @@
+@import "fonts.css";
+@import "media.css";
+@color-green: #80a71d; // переменная для объектов зеленого цвета
+@color-yellow: #d8d452; // переменная для объектов желтого цвета
+@color-tel: #8b8b8b; // цвет телефона 
+@color-mainTitle: #552404; // цвет основного заголовка
+@color-headings: #2b2b2b; // цвет ВСЕХ заголовков
+@color-text: #555; // цвет текста
+@color-sliderElements: #a2a2a2; // цвет элемента слайдера
+@color-borderWhyUs: #d8d452; // цвет блока "Почему мы?"
+@color-successfullOrder: #a57d63; // цвет текста PopUp
+@fontsize-major: 18px; // основной размер шрифта всего лендоса
+@fontsize-buttons: 20px; // размер шрифта кнопок
+@fontsize-mainTitle: 80px; // размер шрифта главного заголовка
+@fontsize-textTitle: 36px; // размер слогана
+@fontsize-deliveryPrice: 30px; // размер шрифта панели доставки
+@fontsize-headings: 30px; // размер шрифта ВСЕХ заголовков
+@fontsize-certificate: 24px; // размер шрифта сертификата 
+@fontsize-chooseLitr: 20px; // размер шрифта на элементах выбора количества молока
+@fontsize-remark: 16px; // размер шрифта примечания
+@fontsize-developers: 12px; // размер шрифта ссылки на портфолио
+@fontLobster: "Lobster",
+cursive; // шрифт главного заголовка
+@fontFregat: "Fregat",
+arial; // шрифт основого текста
+.clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+}
+
+.button-paddings(@topbottom: 15px;
+@leftright: 20px) {
+    padding: @topbottom @leftright;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: @fontsize-buttons;
+    color: #fff;
+    font-family: @fontFregat;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+.centering() {
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//==========end of attributes============\\
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: @fontsize-major;
+    font-family: @fontFregat;
+    color: @color-text;
+}
+
+.container-slider,
+.container-certificates,
+.container-form,
+.container-product {
+    padding-top: 95px!important;
+}
+
+//стили для верхнего меню//
+.container-tel {
+    width: 100%;
+    min-height: 45px;
+    background-color: #fff;
+    line-height: 45px;
+    vertical-align: middle;
+    text-align: left;
+    color: @color-tel;
+    a {
+        color: @color-tel;
+        text-decoration: none;
+        float: right;
+    }
+}
+
+.container-menu {
+    width: 100%;
+    min-height: 90px;
+    background-color: @color-green;
+    .navbar-brand {
+        float: left;
+        img {
+            margin-top: -7px;
+        }
+    }
+    nav {
+        box-shadow: none;
+        ul {
+            margin: 20px 0;
+            li {
+                //                margin-left: 20px;
+                a {
+                    color: #fff;
+                    font-weight: bold;
+                    -webkit-transition: all .2s;
+                    -o-transition: all .2s;
+                    transition: all .2s;
+                    &:hover {
+                        background-color: transparent!important;
+                        color: #ffff5c;
+                    }
+                    &:focus {
+                        background-color: transparent!important;
+                    }
+                }
+                a.btn-call {
+                    .button-paddings();
+                    background-color: @color-yellow;
+                    font-weight: normal;
+                    color: #fff!important;
+                    &:hover,
+                    &:focus {
+                        background-color: #ebeb5a!important;
+                    }
+                }
+            }
+        }
+        & .active a {
+            color: #ffff5c!important;
+        }
+    }
+    .navbar-toggle {
+        border: 2px solid @color-yellow!important;
+        margin: 0;
+        margin-top: 30px;
+        margin-right: 15px;
+        .icon-bar {
+            background-color: @color-yellow!important;
+        }
+    }
+}
+
+.affix {
+    top: 0;
+    z-index: 999;
+    min-height: 90px !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+//стили для блока приветствия//
+.container-banner {
+    width: 100%;
+    height: 520px;
+    background: url("../img/Banner.jpg") no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    .container {
+        .centering();
+        .mainTitle {
+            text-align: center;
+            margin-top: -100px;
+            z-index: 101;
+            h1,
+            h2 {
+                color: @color-mainTitle;
+                font-family: @fontLobster;
+            }
+            h1 {
+                font-size: @fontsize-mainTitle;
+                margin: 0;
+            }
+            h2 {
+                font-size: @fontsize-textTitle;
+                margin: 0;
+            }
+            a {
+                width: 150px;
+                display: inline-block;
+                margin-top: 30px;
+                margin-right: 15px;
+                text-decoration: none;
+            }
+            a.order {
+                .button-paddings(@leftright: 0);
+                background-color: @color-yellow;
+                &:hover,
+                &:focus {
+                    background-color: #ebeb5a;
+                }
+            }
+            a.more {
+                .button-paddings(13px,
+                0);
+                text-shadow: #000 -0.25px 0 2px, #000 0 0.25px 0px, #000 -0.25px 0 0px, #000 0 -0.25px 0px;
+                background-color: transparent;
+                border: 2px solid #fff;
+                margin-left: 15px;
+                &:hover,
+                &:focus {
+                    background-color: rgba(255, 255, 255, .3);
+                }
+            }
+        }
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+    }
+}
+
+//стили для панели с ценой//
+.container-price {
+    width: 100%;
+    background: @color-yellow;
+    height: 100px;
+    display: table;
+    a {
+        display: block;
+        color: @color-mainTitle;
+        width: 100%;
+        height: 100px;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+        &:hover {
+            background-color: #ebeb5a;
+        }
+        .container {
+            .centering();
+            .block {
+                display: table;
+                img {
+                    display: inline-block;
+                }
+                .arrow {
+                    margin-left: 15px;
+                }
+                .text_price_fregat {
+                    display: inline-block;
+                    color: #fff;
+                    position: relative;
+                    top: 30px;
+                    left: 5px;
+                    font-size: 22px;
+                }
+                .text_price_lobster {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 10px;
+                    font-size: @fontsize-headings;
+                    color: @color-mainTitle;
+                    font-family: @fontLobster;
+                }
+            }
+        }
+    }
+}
+
+//стили для блока "О нас"//
+.container-aboutus {
+    width: 100%;
+    height: 590px;
+    position: relative;
+    .container {
+        .centering();
+        .aboutusText {
+            display: table;
+            //            width: 750px;
+            text-align: center;
+            z-index: 101;
+            h2 {
+                color: @color-headings;
+                font-size: @fontsize-headings;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        z-index: 99;
+    }
+    img.jug {
+        left: 0;
+    }
+    img.goat {
+        right: 0;
+    }
+}
+
+//стили для блока "Продукция"
+.container-product {
+    width: 100%;
+    display: table;
+    height: 500px;
+    background: url(../img/flowers.png) repeat-x bottom;
+    -webkit-box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.1);
+    .product-img {
+        text-align: center;
+    }
+    .product-text {
+        text-align: left;
+        hr {
+            width: 150px;
+            border-top: 1px solid #80a71d;
+        }
+    }
+}
+
+//стили для блока "Почему мы?"//
+.container-WhyUs {
+    width: 100%;
+    height: 680px;
+    background: url(../img/backgroundWhyUs.jpg) no-repeat center;
+    background-size: cover;
+    display: table;
+    .wrapper-WhyUs {
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 100%;
+        height: 680px;
+        .container {
+            .centering();
+            .WhyUs-text {
+                background: #fff;
+                outline: 3px solid @color-yellow;
+                outline-offset: -10px;
+                padding: 50px;
+                z-index: 100;
+                position: relative;
+                left: 85px;
+                h2 {
+                    font-family: @fontLobster;
+                    text-transform: uppercase;
+                }
+                p {
+                    color: @color-text;
+                }
+            }
+            .bootle-img {
+                img {
+                    z-index: 0;
+                    display: block;
+                    position: relative;
+                    right: 105px;
+                }
+            }
+        }
+    }
+}
+
+//стили для слайдера//
+.container-slider {
+    width: 100%;
+    min-height: 590px;
+    background: url(../img/PatternPaper.png) repeat;
+    .slider-wrapper {
+        .centering();
+        padding: 50px 0;
+        .img-wrapper {
+            background: #fff;
+            padding: 30px;
+            overflow: hidden;
+            float: left;
+            max-height: 400px;
+            max-width: 400px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .text-wrapper {
+            text-align: left;
+            float: right;
+            max-width: 330px;
+            h3 {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: @fontsize-headings;
+                color: @color-headings;
+                margin-bottom: 20px;
+                font-size: 30px !important;
+            }
+        }
+    }
+    ol.carousel-indicators {
+        bottom: 0px;
+        li {
+            background: #fff;
+        }
+        li.active {
+            background: @color-sliderElements;
+        }
+    }
+    .carousel-control {
+        background: transparent!important;
+        width: 10%;
+        .centering();
+        i {
+            color: @color-sliderElements;
+            text-shadow: none;
+            font-size: 30px;
+        }
+    }
+}
+
+.container-certificates {
+    width: 100%;
+    min-height: 590px;
+    background: url(../img/PatternCertificates.jpg);
+    text-align: center;
+    h2 {
+        background: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        display: inline-block;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    .certificate {
+        .centering();
+        img {
+            cursor: pointer;
+            -webkit-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+            &:hover {
+                -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+                -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+                box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.35);
+            }
+        }
+    }
+}
+
+//стили для формы отправки//
+.container-form {
+    width: 100%;
+    min-height: 500px;
+    background: @color-yellow;
+    font-size: @fontsize-chooseLitr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .select {
+        .centering();
+        img.bottle {
+            margin-right: 25px;
+        }
+        input {
+            width: 38px;
+            height: 38px;
+            text-align: center;
+            border: 2px solid #fff;
+            box-shadow: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            outline: none;
+        }
+        span.litr {
+            margin-right: 30px;
+        }
+        img.arrow {
+            transform: scale(-1, 1);
+            margin-bottom: 30px;
+            margin-right: 10px;
+        }
+        span.choose {
+            font-family: @fontLobster;
+            color: #fff;
+            letter-spacing: 1.5px;
+        }
+    }
+    .litrlabel {
+        text-align: center;
+    }
+    .wrapper-form {
+        .centering();
+        padding-top: 50px;
+        .forma {
+            width: 670px;
+            color: #fff;
+            input,
+            textarea {
+                width: 100%;
+                //                height: 40px;
+                background-color: transparent;
+                border: 0;
+                border-radius: 0;
+                -webkit-appearance: none;
+                border-bottom: 1px solid #fff;
+                outline: none;
+                padding: 3px 1px;
+                margin-bottom: 20px;
+                //                -webkit-user-select: none;
+                &::-webkit-input-placeholder {
+                    color: #fff;
+                }
+                &::-moz-placeholder {
+                    color: #fff;
+                }
+                &:-moz-placeholder {
+                    color: #fff;
+                }
+                &:-ms-input-placeholder {
+                    color: #fff;
+                }
+            }
+            textarea {
+                resize: vertical;
+            }
+            button {
+                .button-paddings(13px,
+                0);
+                display: inline-block;
+                width: 150px;
+                background-color: transparent;
+                border: 2px solid #fff;
+                float: right;
+                margin-bottom: 10px;
+                &:hover,
+                &:focus {
+                    background-color: rgba(255, 255, 255, .3);
+                }
+            }
+            .itog,
+            .itogButton {
+                padding: 0 !important;
+            }
+            .itog {
+                font-weight: bold;
+                font-style: italic;
+                visibility: hidden;
+            }
+        }
+    }
+    .note {
+        text-align: center;
+        color: #fff;
+        font-size: @fontsize-remark;
+        span {
+            color: #ff7200;
+        }
+    }
+    input.error {
+        border-color: #A60000!important;
+        margin-bottom: 0 !important;
+    }
+    label.error {
+        font-size: 12px !important;
+        color: #A60000!important;
+        margin-bottom: 10px;
+    }
+    label#quantity-error {
+        position: relative;
+        top: 40px;
+        right: 47px;
+    }
+}
+
+//стили для футера//       
+.container-footer {
+    width: 100%;
+    min-height: 125px;
+    background: @color-green;
+    color: #fff;
+    text-align: center;
+    .logo-footer {
+        img {
+            float: left;
+            margin-top: 20px;
+        }
+    }
+    .social-footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .links-footer {
+        text-align: right;
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            i,
+            span,
+            a.portfolio-link {
+                font-size: @fontsize-developers;
+            }
+            i {
+                position: relative;
+                left: 3px;
+            }
+            span {
+                font-style: italic;
+                letter-spacing: 0.5px;
+            }
+            a.portfolio-link {
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+}
+
+.popup-success {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .7);
+    text-align: center;
+    z-index: 9000;
+    .centering();
+    i {
+        position: absolute;
+        top: 40px;
+        right: 80px;
+        font-size: 35px;
+        color: @color-successfullOrder;
+        cursor: pointer;
+    }
+    .popup-inner {
+        display: table;
+        p,
+        span {
+            color: @color-successfullOrder;
+            font-family: @fontLobster;
+        }
+        p {
+            text-transform: uppercase;
+            font-size: 40px;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+        span {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    }
+}
+
+.blur_active {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.preloader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #fff;
+    .loading {
+        //        width: 40px;
+        //        height: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        background: url(../img/load.png) center no-repeat;
+        -webkit-animation: rotateIn 1.0s infinite ease-in-out;
+        animation: rotateIn 1.0s infinite ease-in-out;
+    }
+}

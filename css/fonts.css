@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Lobster';
+    src: local('Lobster'), url('../fonts/lobster.woff2') format('woff2'), url('../fonts/lobster.woff') format('woff'), url('../fonts/lobster.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fregat';
+    src: local('Fregat'), url('../fonts/fregat.woff2') format('woff2'), url('../fonts/fregat.woff') format('woff'), url('../fonts/fregat.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fregat';
+    src: local('Fregat Italic'), local('Fregat-Italic'), url('../fonts/fregatitalic.woff2') format('woff2'), url('../fonts/fregatitalic.woff') format('woff'), url('../fonts/fregatitalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Fregat';
+    src: local('Fregat Bold'), local('Fregat-Bold'), url('../fonts/fregatbold.woff2') format('woff2'), url('../fonts/fregatbold.woff') format('woff'), url('../fonts/fregatbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fregat';
+    src: local('Fregat Bold Italic'), local('Fregat-BoldItalic'), url('../fonts/fregatbolditalic.woff2') format('woff2'), url('../fonts/fregatbolditalic.woff') format('woff'), url('../fonts/fregatbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}

@@ -1,0 +1,5 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

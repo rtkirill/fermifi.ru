@@ -1,0 +1,100 @@
+@media screen and (max-width: 992px) {
+    .WhyUs-text {
+        position: static!important;
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .for-xs-size {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+    }
+    nav {
+        text-align: center;
+        margin: auto;
+    }
+    .container-tel .tel-arg {
+        text-align: center;
+        line-height: 25px;
+    }
+    .container-tel .tel-arg a {
+        float: none;
+    }
+    .mainTitle h1 {
+        font-size: 70px!important;
+    }
+    .mainTitle h2 {
+        font-size: 30px!important;
+    }
+    .text_price_fregat {
+        font-size: 12px !important;
+    }
+    .text_price_lobster {
+        font-size: 20px!important;
+    }
+    .container-price {
+        text-align: center;
+    }
+    .container-price .block {
+        margin: 5px 0;
+    }
+    .certificate {
+        margin-bottom: 20px;
+    }
+    .logo-footer,
+    .links-footer {
+        text-align: center !important;
+    }
+    .logo-footer img {
+        float: none!important;
+    }
+    .links-footer ul {
+        padding: 0 !important;
+    }
+    .slider-wrapper {
+        display: block !important;
+    }
+    .img-wrapper,
+    .text-wrapper {
+        margin: auto!important;
+        text-align: center!important;
+        float: none!important;
+    }
+    .img-wrapper {
+        max-height: 300px !important;
+        max-width: 300px !important;
+    }
+    .text-wrapper {
+        margin-bottom: 40px !important;
+        font-size: 14px !important;
+    }
+    .text-wrapper h1 {
+        font-size: 20px !important;
+    }
+    .goat, .jug {
+        opacity: 0.4;
+    }
+    .saf {
+        width: 100% !important;
+    }
+    .container-product {
+        background: #fff!important;
+    }
+    .container-product .product-text {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 447px) {
+    .mainTitle {
+        margin-top: 0!important;
+    }
+    .popup-success i {
+        right: 50px!important;
+        font-size: 30px!important;
+    }
+}
