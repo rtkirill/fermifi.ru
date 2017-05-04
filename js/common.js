@@ -82,5 +82,13 @@ $(document).ready(function () {
         $('.itog').css('visibility', 'visible');
         $('#cost').text(itog);
     });
+    
+    //Close drop-down menu
+    $(document).on('click', function (e){ 
+		var menu = $('.for-xs-size');
+		if(!menu.is(e.target) && menu.has(e.target).length === 0 && $('.navbar-collapse').hasClass('in')) {
+			$('.navbar-toggle').click();
+		}
+	});
 
 });
